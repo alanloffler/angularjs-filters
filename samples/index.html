@@ -1,0 +1,25 @@
+<html ng-app="filterApp">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>AngularJS filters</title>
+	</head>
+	<body ng-controller="MainCtrl">
+		<div>Original: {{ phrase }}</div>
+		<div>
+			All camelcase: {{ phrase | camelcase:"all" }}
+		</div>
+		<div>
+			First camelcase: {{ phrase | camelcase:"first" }}
+		</div>
+		
+		<script type="text/javascript" src="../../libs/angular.js"></script>
+		<script type="text/javascript" src="../filters.js"></script>
+		<script>
+			var app = angular.module("filterApp", ["alanloffler.filters"]);
+			
+			app.controller("MainCtrl", ["$scope", function($scope) {
+				$scope.phrase = "this is a phrase used to show how the filters work."
+			}]);
+		</script>
+	</body>
+</html>
