@@ -20,9 +20,10 @@ angular.module("alanloffler.filters", [])
 	};
 })
 .filter("truncate", function() {
-	return function(text, type, len, end) {
+	return function(text, len, type, end) {
 		var type = type || "chars";
 		var end = end || "...";
+		if(len < end.length + 1) len = end.length + 1;
 		if(!text) return;
 		var toFilter = len - (end.length + 1);
 		if(text.length > toFilter) {
