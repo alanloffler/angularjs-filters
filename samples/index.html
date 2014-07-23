@@ -8,7 +8,7 @@
 		<div>All camelcase: {{ phrase | camelcase:"all" }}</div>
 		<div>First camelcase: {{ phrase | camelcase:"first" }}</div>
 		
-		<div>Truncate: {{ phrase | truncate:"words":2:"///" }}</div>
+		<div>Truncate: {{ phrase | truncate:15:"chars":"..." }}</div>
 		
 		<script type="text/javascript" src="../../libs/angular.js"></script>
 		<script type="text/javascript" src="../filters.js"></script>
